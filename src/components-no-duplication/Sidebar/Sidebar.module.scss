@@ -1,0 +1,61 @@
+@import "../../Utils/mediaQueryManager.scss";
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    @include respond(md) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    
+    .section {
+        margin-bottom: 2.5rem;
+        @include respond(md) {
+            margin-right: 5%;
+            &:last-child {
+                margin: 0;
+            }
+        }
+        &:first-of-type {
+            @include respond(md) {
+                margin-top: 0;
+            }
+            margin-top: 3rem;
+            .sectionTitle {
+                color: #5e7cfb;
+                cursor: pointer;
+                padding: 2px 5px;
+            }
+            .sectionTitle:hover {
+                background: white;
+                border-radius: 10px;
+            }
+            .sectionTitle:hover a {
+                color: #5e7cfb;
+            }
+            .sectionTitle a {
+                color:  #25292d;
+                text-decoration: none;
+            } 
+        }
+
+        ul {
+            padding-left: 10px;
+            list-style: none;
+            li {
+                text-transform: capitalize;
+                font-weight: bold;
+                margin-bottom: 10px;
+                transition: 0.3s all ease-in-out;
+                cursor: pointer;
+                opacity: 0.7;
+                &:hover {
+                    color: #5e7cfb;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
